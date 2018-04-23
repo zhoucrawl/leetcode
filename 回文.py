@@ -18,3 +18,23 @@ def is_huiwen(s):
 每个位置可切割可不切割，这样一共会产生2^(n-1)种方案，我们的任务就是从所有方案中，
 
 找出满足以下两个条件的那个方案：1、切割后形成的所有字符串都是回文的。2、符合条件1的所有方案中切割数最小。
+
+class Solution:
+    def minCut(self, s):
+        """
+        :type s: str
+        :rtype: int
+        """
+        if s == s[::-1]: return 0
+        
+        
+        for i in range(1,len(s)):
+            if s[:i]==s[:i][::-1] and s[i:]==s[i:][::-1]:
+                return 1
+            
+        cut = [x for x in range(-1,len(s))]
+        for i in range(0,len(s)):
+            for j in range(i,len(s)):
+                if s[i:j] == s[j:i:-1]:
+                    cut[j+1] = min(cut[j+1],cut[i]+1)
+        return cut[-1]
