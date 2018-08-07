@@ -73,6 +73,7 @@ class Solution(object):
         return tmp[-1][-1]
     
     #方法二：
+    #创建的空间存储数组，往后延伸一层，从obstacleGrid【0】【0】开始判断
         m = len(obstacleGrid)
         n = len(obstacleGrid[0])
         P = [[0 for j in range(n+1)] for i in range(m+1)]
