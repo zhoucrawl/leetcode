@@ -1,6 +1,7 @@
 
 #题目：word1转化成word2的最小转化次数、可删除、增加、替换
-#找出规律，每一个单词开始转化的最短距离
+#https://blog.csdn.net/u011521382/article/details/52034653图中矩阵规律
+#单词分别建立横轴竖轴，然后依次word1单词转化word2时次数加一，相同取对角，不同时取上、左、对角的最小值
 
 class Solution(object):
     def minDistance(self, word1, word2):
