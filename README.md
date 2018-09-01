@@ -9,7 +9,7 @@ leetcode study
 3.动态规划创建一些空间，来存储数值
 
 -------------------------------------------------------------------
-https://www.cnblogs.com/sun-haiyu/p/7096918.html
+1.https://www.cnblogs.com/sun-haiyu/p/7096918.html
 Python可变变量：list\set\dict,
 当‘=’赋值时，原来变量一同改变。但是不可变量str、元祖是不会改变的
 
@@ -19,3 +19,20 @@ print(id(alist), id(blist))  # id一样 # 所以其中一个变化，会影响�
 blist.append(4)
 print(alist)  # 改变blist, alist也变成了[1 ,2 ,3 4]
 print(id(alist), id(blist))  # id一样，和上面值没有改变时候的id也一样
+
+-----------
+2.can only assign an iterable,整数没有办法迭代
+>>> lis = range(10)
+>>> lis[:] = range(5) 
+>>> lis               #all items of `lis` replaced with range(5)
+[0, 1, 2, 3, 4]
+
+>>> lis[:] = 5        #Non-iterable will raise an error.
+Traceback (most recent call last):
+  File "<ipython-input-77-0704f8a4410d>", line 1, in <module>
+    lis[:] = 5
+TypeError: can only assign an iterable
+
+>>> lis[:] = 'foobar' #works for any iterable/iterator
+>>> lis
+['f', 'o', 'o', 'b', 'a', 'r']
