@@ -20,12 +20,12 @@ blist.append(4)
 print(alist)  # 改变blist, alist也变成了[1 ,2 ,3 4]
 print(id(alist), id(blist))  # id一样，和上面值没有改变时候的id也一样
 
------------
+---------------------------------------------------------------
 2.can only assign an iterable,整数没有办法迭代
 >>> lis = range(10)
 >>> lis[:] = range(5) 
 >>> lis               #all items of `lis` replaced with range(5)
-[0, 1, 2, 3, 4]
+  [0, 1, 2, 3, 4]
 
 >>> lis[:] = 5        #Non-iterable will raise an error.
 Traceback (most recent call last):
@@ -35,4 +35,4 @@ TypeError: can only assign an iterable
 
 >>> lis[:] = 'foobar' #works for any iterable/iterator
 >>> lis
-['f', 'o', 'o', 'b', 'a', 'r']
+   ['f', 'o', 'o', 'b', 'a', 'r']
