@@ -22,17 +22,17 @@ print(id(alist), id(blist))  # id一样，和上面值没有改变时候的id也
 
 ---------------------------------------------------------------
 2.can only assign an iterable,整数没有办法迭代
->>> lis = range(10)
->>> lis[:] = range(5) 
->>> lis               #all items of `lis` replaced with range(5)
+>> lis = range(10)
+>> lis[:] = range(5) 
+>> lis               #all items of `lis` replaced with range(5)
   [0, 1, 2, 3, 4]
 
->>> lis[:] = 5        #Non-iterable will raise an error.
+>> lis[:] = 5        #Non-iterable will raise an error.
 Traceback (most recent call last):
   File "<ipython-input-77-0704f8a4410d>", line 1, in <module>
     lis[:] = 5
 TypeError: can only assign an iterable
 
->>> lis[:] = 'foobar' #works for any iterable/iterator
->>> lis
+>> lis[:] = 'foobar' #works for any iterable/iterator
+>> lis
    ['f', 'o', 'o', 'b', 'a', 'r']
