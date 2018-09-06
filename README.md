@@ -37,6 +37,7 @@ lis[:] = 'foobar' #works for any iterable/iterator
 lis
    ['f', 'o', 'o', 'b', 'a', 'r']
    
- 3.np.random.randint(low,high,取多少个)
+ 3.https://www.cnblogs.com/lemonbit/p/6864179.html
+ np.random.randint(low,high,取多少个)
  high取不到
  4.list.extend()将列表中数值放进去
