@@ -41,3 +41,7 @@ lis
  np.random.randint(low,high,取多少个)
  high取不到
  4.list.extend()将列表中数值放进去
+
+
+5.https://blog.csdn.net/charles_neil/article/details/78940831
+数组切片
