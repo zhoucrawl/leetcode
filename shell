@@ -35,3 +35,10 @@ END{for (i=1;s[i]!="";i++){
 
 }' file.txt
 END表示前面所有模块执行完后执行
+
+#输出第10行文本
+awk '{
+        if(NR==10){
+            print $0
+        }
+}' file.txt
