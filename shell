@@ -12,6 +12,7 @@ uniq -c，统计各行出现的次数，并把次数打印在每行前端
 ###########要先使用sort,然后使用uniq统计，uniq是连续相同的相加
 
 统计男女比例
+https://blog.csdn.net/nange_nice/article/details/77862379
 awk '{for(i=1;i<=NF;i++){print $3}}' file.txt|sort | uniq -c|sort -nr |awk -F' ' '{print $2,$1}'
 
 1.
