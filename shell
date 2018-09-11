@@ -17,3 +17,21 @@ awk -F' ' '{for(i=1;i<=NF;i=i+1){print $i}}' words.txt| sort |uniq -c|sort -nr|a
 awk '/^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/' file.txt
 ^正则开始
 $正则结束
+
+
+
+awk '{
+    for (i=1; i<=NF;i+=1){
+        if(NR==1){
+            s[i] = $i;
+        }else{
+            s[i] = s[i]" "$i;
+        }
+    }
+}
+END{for (i=1;s[i]!="";i++){
+        print s[i]
+    }
+
+}' file.txt
+END表示前面所有模块执行完后执行
