@@ -9,16 +9,19 @@ awk '{command}' file
 sort -nr，每行都以数字开头，按数字从达到小，排列各行
 uniq -c，统计各行出现的次数，并把次数打印在每行前端
 
+统计男女比例
+awk '{for(i=1;i<=NF;i++){print $3}}' file.txt|sort | uniq -c|sort -nr |awk -F' ' '{print $2,$1}'
 
+1.
 cat words.txt|awk -F' ' '{for(i=1;i<=NF;i=i+1){print $i}}'| sort |uniq -c|sort -nr|awk -F' ' '{print $2,$1}'
 awk -F' ' '{for(i=1;i<=NF;i=i+1){print $i}}' words.txt| sort |uniq -c|sort -nr|awk -F' ' '{print $2,$1}'
 
-
+2.
 awk '/^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/' file.txt
 ^正则开始
 $正则结束
 
-
+3.
 NF表示每行的每个字段
 NR表示行数
 awk '{
@@ -37,9 +40,15 @@ END{for (i=1;s[i]!="";i++){
 }' file.txt
 END表示前面所有模块执行完后执行
 
+4.
 #输出第10行文本
 awk '{
         if(NR==10){
             print $0
         }
 }' file.txt
+
+5.
+如果只是显示最近登录的5个帐号
+
+#last -n 5 | awk  '{print $1}'
