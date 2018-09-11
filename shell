@@ -11,3 +11,8 @@ tr等函数详细的用法
 
 cat words.txt|awk -F' ' '{for(i=1;i<=NF;i=i+1){print $i}}'| sort |uniq -c|sort -nr|awk -F' ' '{print $2,$1}'
 awk -F' ' '{for(i=1;i<=NF;i=i+1){print $i}}' words.txt| sort |uniq -c|sort -nr|awk -F' ' '{print $2,$1}'
+
+
+awk '/^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/' file.txt
+^正则开始
+$正则结束
