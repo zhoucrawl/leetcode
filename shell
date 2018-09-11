@@ -6,8 +6,10 @@ http://www.zsythink.net/archives/2046/
 awk '{command}' file
 
 命令sort，把各行按首字母排列顺序重新排列起来
-sort -nr，每行都以数字开头，按数字从达到小，排列各行
+sort -nr，每行都以数字开头，按数字从大到小，排列各行
 uniq -c，统计各行出现的次数，并把次数打印在每行前端
+
+###########要先使用sort,然后使用uniq统计，uniq是连续相同的相加
 
 统计男女比例
 awk '{for(i=1;i<=NF;i++){print $3}}' file.txt|sort | uniq -c|sort -nr |awk -F' ' '{print $2,$1}'
