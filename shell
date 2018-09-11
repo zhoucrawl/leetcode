@@ -1,12 +1,13 @@
+http://www.runoob.com/linux/linux-comm-awk.html
+http://man.linuxde.net/tr
+tr等函数详细的用法
+
 http://www.zsythink.net/archives/2046/
 awk '{command}' file
 
 命令sort，把各行按首字母排列顺序重新排列起来
 sort -nr，每行都以数字开头，按数字从达到小，排列各行
 uniq -c，统计各行出现的次数，并把次数打印在每行前端
-
-http://man.linuxde.net/tr
-tr等函数详细的用法
 
 
 cat words.txt|awk -F' ' '{for(i=1;i<=NF;i=i+1){print $i}}'| sort |uniq -c|sort -nr|awk -F' ' '{print $2,$1}'
