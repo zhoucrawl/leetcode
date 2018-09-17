@@ -1,0 +1,28 @@
+最长公共子串
+1.当相等时，为左上角加1，不等时为0.找到dp中最大值
+
+class Solution(object):
+    def findLength(self, A, B):
+        """
+        :type A: List[int]
+        :type B: List[int]
+        :rtype: int
+        """
+        if len(A)<1 or len(B) <1:
+            return -1
+        
+        dp = [[0 for _ in range(len(A)+1)] for _ in range(len(B)+1)]
+        result = dp[0][0]
+        for i in range(len(A)):
+            for j in range(len(B)):
+                if A[i] == B[j]:
+                    dp[i+1][j+1] = dp[i][j] + 1
+                else:
+                    dp[i+1][j+1] = 0
+            result = max(result,max(dp[i+1][:]))
+        return result
+        
+最长公共子序列
+只要序列一致即可（中间可含有其他字符串）
+http://www.cnblogs.com/xudong-bupt/archive/2013/03/15/2959039.html
+1.当相等时，为左上角加1，不等时为max(左方，上方)，返回最后一个
